@@ -1,0 +1,32 @@
+<ul>
+    <li *ngFor="let comida of comidas"> 
+        <a routerLink="/comida/ {{ comida.id}}">
+            <img [src]="comida.imagenUrl" [alt]="comida.name"/>
+            <div class="content">
+                <div class="name"> 
+                    {{comida.name}}
+                </div>
+                <span class="favorite {{comida.favorite? '': 'no'}}">
+                    ❤️
+                </span>
+                <div class="product-item-footer">
+                    <div class="origins">
+                        <span *ngFor="let origin of comida.origins">
+                            {{origin}}
+                        </span>
+                    </div>
+                    <div class="cook-time">
+                        <span>⏲</span>
+                        {{comida.cookTime}}
+                    </div>
+                </div>
+                <div class="price">
+                    <span>
+                        {{comida.price}}
+                    </span>
+                </div>
+            </div>
+
+        </a>
+    </li>
+</ul>
